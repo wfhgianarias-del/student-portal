@@ -1,0 +1,34 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#3563e9;--navy:#142b50;--text:#1b2b4b;--muted:#75829a;--border:#e4eaf3}
+body{font-family:"Poppins",sans-serif;color:var(--text);min-height:100vh;background:linear-gradient(120deg,rgba(15,39,79,.85),rgba(35,71,135,.68)),url("https://images.unsplash.com/photo-1562774053-7f5ab0d6aa17?auto=format&fit=crop&w=2000&q=85") center/cover fixed}
+[hidden]{display:none!important}button,input{font:inherit}
+.teacher-topbar{height:74px;padding:14px 6%;display:flex;align-items:center;justify-content:space-between;gap:15px;background:var(--navy);color:#fff}
+.teacher-brand{display:flex;align-items:center;gap:10px;color:white;text-decoration:none;font-size:17px;font-weight:700}.teacher-brand>span{display:grid;place-items:center;width:35px;height:35px;background:#ffffff20;border-radius:10px}.teacher-brand small{font-size:9px;font-weight:500;letter-spacing:1px;color:#bdccef;margin-left:8px}.back-link{font-size:11px;color:#dce6fb;text-decoration:none}
+.teacher-wrap{width:min(1200px,92%);margin:42px auto 55px}
+.teacher-login-card{max-width:440px;margin:5vh auto;padding:32px;border:1px solid #ffffffaa;border-radius:22px;background:#fffffffa;box-shadow:0 25px 70px #071a3b55}
+.teacher-symbol{display:grid;place-items:center;width:49px;height:49px;border-radius:15px;background:#edf2ff;font-size:22px;margin-bottom:20px}
+.eyebrow{font-size:10px;letter-spacing:1.7px;color:var(--blue);font-weight:700;margin-bottom:8px}
+h1{font-size:27px;letter-spacing:-.7px}.intro{font-size:11px;line-height:1.8;color:var(--muted);margin:8px 0 23px}
+.teacher-login-card label,.search-row label{display:block;font-size:11px;font-weight:600;margin-bottom:8px}
+.teacher-login-card input,.search-row input{width:100%;height:45px;border:1px solid #dce3ef;border-radius:10px;padding:0 13px;outline:none;background:#fbfcff;font-size:11px;color:var(--text)}
+.teacher-login-card input:focus,.search-row input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #3563e91a}
+.teacher-button{width:100%;margin-top:16px;padding:13px;border:0;border-radius:10px;background:linear-gradient(120deg,#4777f4,#2854d7);color:white;font-size:11px;font-weight:600}
+.notice{font-size:11px;margin-top:12px;color:#c43b50;line-height:1.7}.demo-note{margin-top:18px;font-size:10px;color:#6f7c92;background:#f4f7fd;border-radius:9px;padding:11px}.security-note{font-size:10px;line-height:1.8;color:#78859a;margin-top:14px}
+.dashboard-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:27px 30px;border-radius:18px;background:#fffffffa;box-shadow:0 12px 35px #071a3b22}.dashboard-heading h1{font-size:29px}.dashboard-heading .intro{margin-bottom:0}
+.logout-button,.refresh-button{padding:11px 15px;border:1px solid #dbe3f1;border-radius:9px;background:white;color:var(--text);font-size:10px;font-weight:600}.logout-button:hover,.refresh-button:hover{border-color:var(--blue);color:var(--blue)}
+.teacher-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin:18px 0}.teacher-stats article{padding:22px;border-radius:15px;background:#fffffffa;box-shadow:0 10px 28px #071a3b18}.stat-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:#edf2ff;color:var(--blue);font-size:19px}.teacher-stats p{margin-top:12px;color:var(--muted);font-size:11px}.teacher-stats h2{font-size:23px;margin-top:4px}
+.student-list-card{padding:25px;border-radius:17px;background:#fffffffa;box-shadow:0 12px 35px #071a3b22}.list-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}.list-heading h2{font-size:18px}.list-heading p{font-size:10px;color:var(--muted);margin-top:5px}.search-row{max-width:480px;margin-bottom:18px}
+.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:11px}table{width:100%;border-collapse:collapse;min-width:900px;text-align:left}thead{background:#f3f6fc}th{font-size:10px;color:#52617a;font-weight:700;padding:14px 13px;white-space:nowrap}td{font-size:10px;padding:14px 13px;border-top:1px solid #edf0f6;white-space:nowrap}tbody tr:hover{background:#f8faff}.empty-state{text-align:center;color:var(--muted);padding:27px}.list-message{margin-top:13px;color:var(--muted);font-size:10px}.bottom-note{color:#fff;background:#10284fbb;border-radius:10px;padding:12px 15px}.teacher-footer{text-align:center;padding:17px;color:#edf3ff;font-size:9px;letter-spacing:1.5px}
+@media(max-width:700px){.teacher-topbar{padding:13px 4%}.teacher-brand{font-size:14px}.teacher-brand small{display:none}.teacher-wrap{margin-top:23px}.teacher-login-card{padding:24px}.dashboard-heading{align-items:flex-start;padding:22px;flex-direction:column}.dashboard-heading h1{font-size:24px}.teacher-stats{grid-template-columns:1fr}.student-list-card{padding:17px}.list-heading{align-items:flex-start;flex-direction:column}.search-row{max-width:none}}
+
+/* Student status and teacher actions */
+.teacher-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+.status-pill{display:inline-block;padding:5px 9px;border-radius:999px;font-size:9px;font-weight:700;background:#e6f7ed;color:#187746}
+.status-pill.dropped{background:#fff0dc;color:#9b5a08}
+.action-cell{display:flex;align-items:center;gap:7px}
+.action-button{border:0;border-radius:7px;padding:8px 9px;font-size:9px;font-weight:600;cursor:pointer;white-space:nowrap}
+.drop-button{background:#fff0dc;color:#925400}
+.restore-button{background:#e6f7ed;color:#187746}
+.delete-button{background:#ffebeb;color:#b42323}
+.action-button:hover{filter:brightness(.96)}
+@media(max-width:700px){.teacher-stats{grid-template-columns:1fr}}

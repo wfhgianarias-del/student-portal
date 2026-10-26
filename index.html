@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal | Registration & Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="javascript.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a href="#" class="brand"><span class="brand-icon">✦</span> Student Portal</a>
+    <span class="topbar-note">LEARN&nbsp; • &nbsp;GROW&nbsp; • &nbsp;SUCCEED</span>
+  </header>
+
+  <main class="auth-layout" id="authPage">
+    <section class="welcome-panel">
+      <p class="eyebrow">YOUR FUTURE STARTS HERE</p>
+      <h1>Build your<br>future with<br><span>confidence.</span></h1>
+      <p class="welcome-copy">Join our academic community and begin your journey toward a brighter future.</p>
+      <div class="feature"><span class="feature-icon">✓</span><span><strong>Simple Registration</strong><small>Create your student account in minutes.</small></span></div>
+      <div class="feature"><span class="feature-icon">✦</span><span><strong>Personal Dashboard</strong><small>See your academic details in one place.</small></span></div>
+      <div class="feature"><span class="feature-icon">⌂</span><span><strong>Easy Account Access</strong><small>Log in whenever you need your information.</small></span></div>
+    </section>
+
+    <section class="registration-card">
+      <div class="card-icon">🎓</div>
+
+      <div id="registerView">
+        <p class="eyebrow">STUDENT PORTAL</p>
+        <h2>Create Your Account</h2>
+        <p class="card-description">Enter your details to get started.</p>
+        <form id="registerForm">
+          <div class="section-heading"><span class="step-number">01</span><div><h3>Personal Information</h3><p>Tell us about yourself.</p></div></div>
+          <div class="form-group">
+            <label for="fullname">Full Name <b>*</b></label>
+            <input id="fullname" type="text" placeholder="Enter your full name" autocomplete="name" minlength="2" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <b>*</b></label>
+            <input id="email" type="email" placeholder="name@example.com" autocomplete="email" required>
+          </div>
+          <div class="form-group">
+            <label for="newUsername">Create Username <b>*</b></label>
+            <input id="newUsername" type="text" placeholder="4–20 letters, numbers, or _" autocomplete="username" pattern="[A-Za-z0-9_]{4,20}" minlength="4" maxlength="20" required>
+          </div>
+          <div class="form-group">
+            <label for="newPassword">Create Password <b>*</b></label>
+            <input id="newPassword" type="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required>
+          </div>
+
+          <div class="section-heading academic-heading"><span class="step-number">02</span><div><h3>Academic Information</h3><p>Choose your course and year level.</p></div></div>
+          <div class="form-group">
+            <label for="course">Course <b>*</b></label>
+            <select id="course" required>
+              <option value="">Choose your course</option>
+              <option>BSIT — Information Technology</option>
+              <option>BSBA — Business Administration</option>
+              <option>BSED — Secondary Education</option>
+              <option>BSHM — Hospitality Management</option>
+              <option>HRM — Hotel and Restaurant Management</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="yearLevel">Year Level <b>*</b></label>
+            <select id="yearLevel" required>
+              <option value="">Choose your year level</option>
+              <option>1st Year</option><option>2nd Year</option>
+              <option>3rd Year</option><option>4th Year</option>
+            </select>
+          </div>
+          <label class="agreement"><input type="checkbox" id="agreement" required><span>I confirm that the information provided is accurate and complete.</span></label>
+          <button type="submit" class="primary-button">Create My Account <span>→</span></button>
+          <p id="registerMessage" class="message" role="status" aria-live="polite"></p>
+        </form>
+        <p class="switch-text">Already have an account? <button type="button" class="text-button" id="showLogin">Log in here</button></p>
+      </div>
+
+      <div id="loginView" hidden>
+        <p class="eyebrow">WELCOME BACK</p>
+        <h2>Login to Your Portal</h2>
+        <p class="card-description">Enter the username and password you created.</p>
+        <form id="loginForm">
+          <div class="section-heading"><span class="step-number">01</span><div><h3>Account Login</h3><p>Your account details are private.</p></div></div>
+          <div class="form-group">
+            <label for="loginUsername">Username <b>*</b></label>
+            <input id="loginUsername" type="text" placeholder="Enter your username" autocomplete="username" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password <b>*</b></label>
+            <input id="loginPassword" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+          </div>
+          <button type="submit" class="primary-button">Login to Dashboard <span>→</span></button>
+          <p id="loginMessage" class="message" role="status" aria-live="polite"></p>
+        </form>
+        <p class="switch-text">New to the portal? <button type="button" class="text-button" id="showRegister">Create an account</button></p>
+      </div>
+
+      <footer class="form-footer">✦ Designed for your academic future.</footer>
+    </section>
+  </main>
+
+  <main id="dashboardPage" hidden>
+    <aside class="sidebar">
+      <a href="#" class="brand sidebar-brand"><span class="brand-icon">✦</span> Student Portal</a>
+      <p class="sidebar-label">MAIN MENU</p>
+      <button class="nav-item active" data-view="overview">⌂ &nbsp; Dashboard</button>
+      <button class="nav-item" data-view="profile">♙ &nbsp; My Profile</button>
+      <button class="nav-item" data-view="course">▤ &nbsp; My Course</button>
+      <button class="nav-item" data-view="enrollment">✓ &nbsp; Enrollment</button>
+      <div class="sidebar-bottom"><p>Keep learning.</p><small>Your future is full of possibilities.</small><button id="logoutBtn" class="logout-button">↩ &nbsp; Logout</button></div>
+    </aside>
+
+    <section class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div><p class="eyebrow">STUDENT SPACE</p><h2 id="pageHeading">Dashboard</h2></div>
+        <div class="user-chip"><div class="avatar" id="avatar">S</div><div><strong id="topbarName">Student</strong><small>Student Account</small></div></div>
+      </header>
+
+      <div class="dashboard-content">
+        <section class="hero-banner">
+          <div><span class="welcome-tag">WELCOME ABOARD!</span><h1>Welcome, <span id="welcomeName">Student</span>! 👋</h1><p>Your academic journey begins here. Keep learning and growing.</p></div>
+          <div class="hero-decoration">🎓</div>
+        </section>
+
+        <section class="stats-grid" id="statsGrid">
+          <article class="stat-card blue-stat"><div class="stat-icon">▤</div><p>My Course</p><h3 id="statCourse">—</h3><small>Selected academic program</small></article>
+          <article class="stat-card purple-stat"><div class="stat-icon">♙</div><p>Year Level</p><h3 id="statYear">—</h3><small>Academic year</small></article>
+          <article class="stat-card green-stat"><div class="stat-icon">✓</div><p>Account Status</p><h3>Active</h3><small>Account created successfully</small></article>
+        </section>
+
+        <section class="dashboard-grid" id="detailGrid">
+          <article class="content-card information-card">
+            <div class="card-title"><div><span class="eyebrow">PERSONAL DETAILS</span><h3>Student Information</h3></div><span class="title-icon">♙</span></div>
+            <div class="detail-row"><span>Full Name</span><strong id="detailName">—</strong></div>
+            <div class="detail-row"><span>Email Address</span><strong id="detailEmail">—</strong></div>
+            <div class="detail-row"><span>Username</span><strong id="detailUsername">—</strong></div>
+            <div class="detail-row"><span>Student ID</span><strong id="detailId">—</strong></div>
+            <div class="detail-row"><span>Course</span><strong id="detailCourse">—</strong></div>
+            <div class="detail-row"><span>Year Level</span><strong id="detailYear">—</strong></div>
+            <div class="detail-row"><span>Account Created</span><strong id="detailDate">—</strong></div>
+          </article>
+          <article class="content-card quick-card">
+            <div class="card-title"><div><span class="eyebrow">EXPLORE</span><h3>Quick Links</h3></div><span class="title-icon">✦</span></div>
+            <button class="quick-link" data-view="profile"><span class="quick-icon">♙</span><span><strong>My Profile</strong><small>View your personal details</small></span><span>→</span></button>
+            <button class="quick-link" data-view="course"><span class="quick-icon">▤</span><span><strong>My Course</strong><small>View your selected program</small></span><span>→</span></button>
+            <button class="quick-link" data-view="enrollment"><span class="quick-icon">✓</span><span><strong>Enrollment Records</strong><small>View your account information</small></span><span>→</span></button>
+          </article>
+        </section>
+
+        <section class="content-card secondary-panel" id="secondaryPanel">
+          <div class="card-title"><div><span class="eyebrow">YOUR NEXT STEP</span><h3>Keep Moving Forward</h3></div><span class="title-icon">✧</span></div>
+          <p>Your account has been created. Contact your school for official enrollment requirements and next steps.</p>
+          <div class="success-note"><span>✓</span><div><strong>Account Created Successfully</strong><small>Your information is available in this dashboard.</small></div></div>
+        </section>
+        <footer class="dashboard-footer">Student Portal © <span id="dashboardYear"></span><span>Learn today. Lead tomorrow.</span></footer>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer" id="authFooter">STUDENT PORTAL © <span id="year"></span></footer>
+</body>
+</html>

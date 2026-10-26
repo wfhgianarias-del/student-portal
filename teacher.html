@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Portal | Student Accounts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="teacher.css">
+  <script src="teacher.js" defer></script>
+</head>
+<body>
+  <header class="teacher-topbar">
+    <a href="index.html" class="teacher-brand"><span>✦</span> Student Portal <small>TEACHER ADMIN</small></a>
+    <a class="back-link" href="index.html">← Student Portal</a>
+  </header>
+
+  <main class="teacher-wrap">
+    <section class="teacher-login-card" id="teacherLoginPanel">
+      <div class="teacher-symbol">🔐</div>
+      <p class="eyebrow">RESTRICTED ACCESS</p>
+      <h1>Teacher Login</h1>
+      <p class="intro">Sign in to view student accounts created in this browser.</p>
+      <form id="teacherLoginForm">
+        <label for="teacherPassword">Teacher password</label>
+        <input id="teacherPassword" type="password" placeholder="Enter teacher password" required autocomplete="current-password">
+        <button class="teacher-button" type="submit">Open Teacher Dashboard →</button>
+        <p id="teacherLoginMessage" class="notice" role="status" aria-live="polite"></p>
+      </form>
+      <p class="demo-note"><strong>Demo password:</strong> teacher2026</p>
+      <p class="security-note">For practice only: a password placed in front-end code is not secure for a real school portal.</p>
+    </section>
+
+    <section id="teacherDashboard" hidden>
+      <div class="dashboard-heading">
+        <div><p class="eyebrow">TEACHER CONTROL PANEL</p><h1>Student Accounts</h1><p class="intro">Accounts registered on this browser are listed below.</p></div>
+        <button id="teacherLogout" class="logout-button">Log out</button>
+      </div>
+
+      <div class="teacher-stats">
+        <article><span class="stat-icon">♙</span><p>Total student accounts</p><h2 id="totalStudents">0</h2></article>
+        <article><span class="stat-icon">✓</span><p>Active students</p><h2 id="activeStudents">0</h2></article>
+        <article><span class="stat-icon">↘</span><p>Dropped students</p><h2 id="droppedStudents">0</h2></article>
+      </div>
+
+      <section class="student-list-card">
+        <div class="list-heading">
+          <div><h2>Registered Students</h2><p>Student records saved by the registration page.</p></div>
+          <button id="refreshStudents" class="refresh-button">↻ Refresh list</button>
+        </div>
+        <div class="search-row">
+          <label for="studentSearch">Search students</label>
+          <input id="studentSearch" type="search" placeholder="Search by name, username, email, course, status, or student ID">
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Student ID</th><th>Full Name</th><th>Username</th><th>Email</th><th>Course</th><th>Year Level</th><th>Status</th><th>Date Created</th><th>Actions</th></tr></thead>
+            <tbody id="studentRows"><tr><td colspan="9" class="empty-state">No student accounts found yet.</td></tr></tbody>
+          </table>
+        </div>
+        <p id="listMessage" class="list-message" aria-live="polite"></p>
+        <p class="security-note">“Mark Dropped” keeps the record for reference. “Delete” permanently removes it from this browser’s demo records. Always confirm before deleting.</p>
+      </section>
+      <p class="security-note bottom-note">Privacy reminder: this demo only reads accounts saved in the same browser and website origin. It cannot see students who registered on another device or browser.</p>
+    </section>
+  </main>
+  <footer class="teacher-footer">STUDENT PORTAL · TEACHER ADMIN DEMO</footer>
+</body>
+</html>
